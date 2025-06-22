@@ -15,5 +15,4 @@ void print_alphabet(void)
 		letra++;
 	}
 	_putchar('\n');
-	return;
 }
