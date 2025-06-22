@@ -1,9 +1,10 @@
 #include "main.h"
-
 /**
- * main - check the code
+ * print_alphabet - Prints the alphabet in lowercase followed by a new line.
  *
- * Return: Always 0.
+ * Description: This function uses a loop to print all the lowercase letters
+ * from a to z, then prints a newline character.
+ * Return: void
  */
 void print_alphabet(void)
 {
