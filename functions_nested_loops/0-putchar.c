@@ -7,6 +7,13 @@
  */
 int main(void)
 {
-    print_alphabet();
-    return (0);
+	char word[] = "_putchar";
+	int i = 0;
+
+	while (i <= 8)
+	{
+		_putchar(word[i]);
+		i++;
+	}
+	return (0);
 }
