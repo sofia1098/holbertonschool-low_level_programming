@@ -20,4 +20,15 @@ void print_to_98(int n)
 				printf(", ");
 		}
 	}
+	else 
+	{
+		for (; n >= 98; n--)
+		{
+			printf("%d", n);
+			if (n != 98)
+				printf(", ");
+		}
+
+	}
+	_putchar('\n');
 }
