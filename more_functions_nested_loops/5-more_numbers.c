@@ -16,7 +16,7 @@ void more_numbers(void)
 
 	int x;
 
-	for (x = 0; x < 11; x++)
+	for (x = 0; x < 10; x++)
 	{
 		for (i = 0; p[i] != '\0'; i++)
 		{
