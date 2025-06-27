@@ -13,9 +13,9 @@ void print_square(int size)
 
 	if (size > 0)
 	{
-		for (i = 0; i <= size; i++) /*filas*/
+		for (i = 1; i <= size; i++) /*filas*/
 		{
-			for (j = 0; j <= size; j++) /*columnas*/
+			for (j = 1; j <= size; j++) /*columnas*/
 				_putchar('#');
 			if (i != size)
 				_putchar('\n');
