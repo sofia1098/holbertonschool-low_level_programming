@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * fizz_buzz - prints the numbers from 1 to 100.
+ * main - prints the numbers from 1 to 100.
  *
  * Return: 0.
  */
@@ -17,11 +17,11 @@ int main(void)
 			printf("FizzBuzz ");
 		else if (a % 3 == 0)
 			printf("Fizz ");
-		 else if (a % 5 == 0)
-                        printf("Buzz ");
+		else if (a % 5 == 0)
+			printf("Buzz ");
 		else
 			printf("%d ", a);
 	}
 	printf("\n");
-	return 0;
+	return (0);
 }
