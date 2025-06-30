@@ -2,9 +2,10 @@
 
 /**
  * swap_int - swaps the values of two integers
- * a: firt num
- * b: second num
- *
+ * @*a: firt num
+ * @*b: second num
+ * 
+ * Return: void
  */
 
 void swap_int(int *a, int *b)
