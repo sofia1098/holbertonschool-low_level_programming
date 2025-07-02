@@ -19,6 +19,6 @@ char *_strcpy(char *dest, char *src)
 		copia = src[i];
 		dest[i] = copia;
 	}
-	dest[i] = '\0';
+	dest[i] += '\0';
 	return dest;
 }
