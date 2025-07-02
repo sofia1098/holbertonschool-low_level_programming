@@ -1,7 +1,14 @@
 #include "main.h"
 
-char
-*_strcpy(char *dest, char *src)
+/**
+ * strcpy -  copies the string pointed to by src
+ * @*dest: destino.
+ * @*src: origen.
+ *
+ * Return: *dest
+ */
+
+char *_strcpy(char *dest, char *src)
 {
 	int i;
 
@@ -12,6 +19,7 @@ char
 		copia = src[i];
 		dest[i] = copia;
 	}
-	dest[i] += '\0';
+	i++;
+	dest[i] = '\0';
 	return dest;
 }
