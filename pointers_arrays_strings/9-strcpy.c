@@ -12,6 +12,6 @@ char
 		copia = src[i];
 		dest[i] = copia;
 	}
-	*dest += '\0';
+	dest[i] += '\0';
 	return dest;
 }
