@@ -5,8 +5,14 @@ char
 {
 	int i;
 
-	while (src[i] != '\0')
-		i++;
+	char copia; /*char *copia = malloc(strlen(src) + 1); //
+if (copia == NULL) {*/
 
-	*dest = src
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		copia = src[i];
+		dest[i] = copia;
+	}
+	dest += '\0';
+	return dest;
 }
