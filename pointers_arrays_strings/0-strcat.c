@@ -1,16 +1,19 @@
 #include "main.h"
 
-char *_strcat(char *dest, char *src)
+char
+*_strcat(char *dest, char *src)
 {
-	int i;
+	int i, j;
 
-	char *copia;
+	char *ptr = dest;
 
-	for (i = 0; src[i] != '\0'; i++)
+	for (i = 0; dest[i] != '\0'; i++) /*ponde el indice en el final del string destino*/
+		;
+	for (j = 0; src[j] != '\0'; j++) /*copia desde el final */
 	{
-		copia[i] = src[i];
-		
+		dest[i] = src[j];
+		i++;
 	}
-
-
+	dest[j] = '\0';
+	return (ptr);
 }
