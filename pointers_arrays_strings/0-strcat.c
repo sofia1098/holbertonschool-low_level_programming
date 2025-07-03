@@ -14,6 +14,7 @@ char
 		dest[i] = src[j];
 		i++;
 	}
-	dest[j] = '\0';
+	src[j] = '\0';
+
 	return (ptr);
 }
