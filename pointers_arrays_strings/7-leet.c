@@ -1,7 +1,7 @@
 #include "main.h"
 
 char
-*leet(char *s) 
+*leet(char *s)
 {
 	int i = 0, j;
 
