@@ -2,14 +2,20 @@
 
 char *cap_string(char *str)
 {
-	int i, j;
-
+	int i = 0, j;
 	char a[] = " \t\n,;.!?\"(){}";
 
-	for (i = 0; str[i] != '\0';i++)
+	while (str[i] != '\0')
 	{
-		if (str[i] > 'a' && str[i] < 'z' && str[i - 1] == a[])
-			str[i] = str[i] - 32;
+		for (j = 0; a[j] != '\0'; j++)
+		{
+			if (str[i] == a[j])
+			{
+			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')               
+				str[i + 1] -= 32;
+			}
+		}
 	}
+	i++;
 	return (str);
 }
