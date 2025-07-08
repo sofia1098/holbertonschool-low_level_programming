@@ -18,7 +18,7 @@ _strspn(char *s, char *accept)
 		}
 	if (!match)
 		break;
-	contador ++;
+	contador++;
 	}
 	return (contador);
 }
