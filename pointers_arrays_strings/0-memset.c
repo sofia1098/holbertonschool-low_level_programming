@@ -5,7 +5,7 @@ char
 {
 	unsigned int i = 0;
 
-	while (i <= n)
+	while (i < n)
 	{
 		s[i] = b;
 		i++;
