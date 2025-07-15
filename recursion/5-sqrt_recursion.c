@@ -1,8 +1,8 @@
 #include "main.h"
 
-int _sqrt_recursion(int n)
+int _raiz(int n)
 {
-	int aprox_raiz;
+	int x,
 	
 	if (n < 0)
 	{
@@ -12,16 +12,13 @@ int _sqrt_recursion(int n)
 	{
 		return (n);
 	}
+	if (x * x == n)
+		return (x);
+	else 
+		x++;
 
-	aprox_raiz = (n / _sqrt_recursion(n - 1));
-
-	if ((aprox_raiz) * (aprox_raiz) < n)
-		return (aprox_raiz + 1);
-
-	if ((aprox_raiz + 1) * (aprox_raiz + 1) > n)
-		return (-1);
-
-	return ( aprox_raiz);
-
-	/*preguntar si se puede usar funcion auxiliar*/
+}	
+int _sqrt_recursion(int n)
+{
+	return (_raiz(n - 1));
 }
