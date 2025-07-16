@@ -21,13 +21,12 @@ char
 	if (array == NULL)
 		return (NULL);
 
-	for (k = 0; k <= (i + j); k++)
-	{
-		if (k <= i)
-			array[k] = s1[k];
-		else
-			array[k] = s2[k];
-	}
+	for (k = 0; k < i; k++)
+		array[k] = s1[k];
+
+	for (k = 0; k < j; k++)
+		array[i + k] = s2[k];
+
 	array[i + j] = '\0';
 	return (array);
 
