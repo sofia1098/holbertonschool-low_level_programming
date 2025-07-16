@@ -7,17 +7,18 @@ char
 	int i, j, k;
 	char *array;
 
-	if (s1 != NULL)
-	{
-		for (i = 0; s1[i]; i++)
-			;
-	}
-	if (s2 != NULL)
-	{
-		for (j = 0; s2[j] != '\0' ; j++)
-			;
-	}
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+
+	for (i = 0; s1[i]; i++)
+		;
+	for (j = 0; s2[j] != '\0' ; j++)
+		;
+
 	array = malloc((i + j + 1) * sizeof(char));
+
 	if (array == NULL)
 		return (NULL);
 
