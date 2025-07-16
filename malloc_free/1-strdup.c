@@ -14,8 +14,8 @@ char
 		;
 	array = malloc((i + 1) * sizeof(char));
 
-	if (str == NULL)
-                return (NULL);
+	if (array == NULL)
+		return (NULL);
 
 	for (j = 0; j <= i; j++)
 		array[j] = str[j];
