@@ -12,7 +12,7 @@ char
 
 	for (i = 0; str[i] != '\0'; i++)
 		;
-	array = malloc(i * sizeof(char));
+	array = malloc((i + 1) * sizeof(char));
 
 	for (j = 0; j <= i; j++)
 		array[j] = str[j];
