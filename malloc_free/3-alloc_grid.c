@@ -24,6 +24,7 @@ int
 		for (j = 0; j < width; j++)
 			matriz[i][j] = 0;
 	}
-	return (matriz);
 	free(matriz);
+
+	return (matriz);
 }
