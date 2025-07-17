@@ -25,4 +25,5 @@ int
 			matriz[i][j] = 0;
 	}
 	return (matriz);
+	free(matriz);
 }
