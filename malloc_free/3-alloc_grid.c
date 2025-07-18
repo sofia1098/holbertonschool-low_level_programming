@@ -1,27 +1,33 @@
 #include "main.h"
 #include <stdlib.h>
 
-int **alloc_grid(int width, int height)
+int
+**alloc_grid(int width, int height)
 {
 	int i, j;
-
 	int **matriz;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	matriz = malloc(sizeof(int *) * height); /*espaico para filas*/
-	if (matriz == NULL)
+	matriz = malloc(sizeof(int *) * height);  /* array de punteros (filas)*/
+		if (matriz == NULL)
 		return (NULL);
 
-	for (i = 0; i < height; i++) /*para cada fila*/
+	for (i = 0; i < height; i++)
 	{
-		matriz[i] = malloc(width * sizeof(int)); /*cantidad de olumnas*/	
+		matriz[i] = malloc(sizeof(int) * width);  /* cantidad de columnas */
 		if (matriz[i] == NULL)
+		{
+			for (j = 0; j < i; j++)
+				free(matriz[j]);
+			free(matriz);
 			return (NULL);
-		/*iniciar en 0 todos los espacios*/
+		}
+
 		for (j = 0; j < width; j++)
 			matriz[i][j] = 0;
 	}
+
 	return (matriz);
 }
