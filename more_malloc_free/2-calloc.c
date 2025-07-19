@@ -17,7 +17,7 @@ void
 	if (p == NULL)
 		return (NULL);
 
-	*ptr = p;
+	ptr = p;
 	for (i = 0; i < (nmemb * size); i++)
 	{
 		ptr[i] = 0;
