@@ -7,11 +7,11 @@ dog_t
 {
 	dog_t *d;
 	char *new_name, *new_owner;
-	int len_n = 0, len_o = 0;
-	
-	while(*name != '\0')
+	int len_n = 0, len_o = 0, i;
+
+	while (*name != '\0')
 		len_n++;
-	while(*owner != '\0')
+	while (*owner != '\0')
 		len_o++;
 
 	d = malloc(sizeof(dog_t));
@@ -25,7 +25,8 @@ dog_t
 		return (NULL);
 	}
 
-	strcpy(new_name, name);
+	for (i = 0; name[i] != '\0'; i++)
+		new_name[i] = name[i];
 
 	new_owner = malloc(len_o + 1);
 
@@ -35,7 +36,8 @@ dog_t
 		free(d);
 		return (NULL);
 	}
-	strcpy(new_owner, owner);
+	for (i = 0; owner[i] != '\0'; i++)
+		new_owner[i] = owner[i];
 
 	d->name = new_name;
 	d->age = age;
