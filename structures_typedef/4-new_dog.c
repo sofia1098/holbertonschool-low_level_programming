@@ -15,7 +15,7 @@ dog_t
 		;
 
 	for (len_o = 0; owner[len_o] != '\0'; len_o++)
-                ;
+		;
 
 	d = malloc(sizeof(dog_t));
 	if (d == NULL)
@@ -24,6 +24,7 @@ dog_t
 	new_name = malloc(len_n + 1);
 	if (new_name == NULL)
 	{
+		free(new_name);
 		free(d);
 		return (NULL);
 	}
@@ -32,10 +33,9 @@ dog_t
 		new_name[i] = name[i];
 
 	new_owner = malloc(len_o + 1);
-
 	if (new_owner == NULL)
 	{
-		free(new_name);
+		free(new_owner);
 		free(d);
 		return (NULL);
 	}
