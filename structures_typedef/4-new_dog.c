@@ -7,12 +7,15 @@ dog_t
 {
 	dog_t *d;
 	char *new_name, *new_owner;
-	int len_n = 0, len_o = 0, i;
+	int len_n = 0;
+	int len_o = 0;
+	int i;
 
-	while (*name != '\0')
-		len_n++;
-	while (*owner != '\0')
-		len_o++;
+	for (len_n = 0; name[len_n] != '\0'; len_n++)
+		;
+
+	for (len_o = 0; owner[len_o] != '\0'; len_o++)
+                ;
 
 	d = malloc(sizeof(dog_t));
 	if (d == NULL)
