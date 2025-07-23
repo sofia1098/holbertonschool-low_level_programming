@@ -7,6 +7,10 @@ list_t
 {
 	list_t *nuevo;
 
+	const char *p = str; /*para no perder ptr a str*/
+
+	int lenstr = 0;
+
 	if (str == NULL)
 		return (NULL);
 
@@ -21,7 +25,13 @@ list_t
 		return (NULL);
 	}
 
-	nuevo->len = strlen(str);
+	while (*p != '\0') /* largo de str*/
+	{
+		p++;
+		lenstr++;
+	}
+
+	nuevo->len = lenstr;
 	nuevo->next = *head; /*puntero al head anterior*/
 	*head = nuevo; /*actualiza el puntero head al nuevo nodo*/
 
