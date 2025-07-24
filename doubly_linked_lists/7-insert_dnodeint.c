@@ -31,11 +31,15 @@ dlistint_t
 	}
 	/*ubico el nodo entre el temp y el next*/
 	new_n->n = n;
-	new_n->prev = temp;
-	new_n->next = temp->next;
-	/*le doy nuevo valor a los ptrs de los nodos adyacentes*/
-	temp->next->prev = new_n;
-	temp->prev->next = new_n;
+	new_n->prev = temp; /*apunta hacia atras*/
+	new_n->next = temp->next; 
+
+	/*le doy nuevo valor a los ptrs de los nodos adyacentes
+	 * temp esta antes en la lista, su next apunta a new_n
+	 * [0] <-> [1(temp)] <-> [new_n] <-> [2] <-> [3]*/
+
+	temp->next->prev = new_n; /*[2]->prev apunta ahora a new_n*/
+	temp->next = new_n; 
 
 	return (new_n);
 }
