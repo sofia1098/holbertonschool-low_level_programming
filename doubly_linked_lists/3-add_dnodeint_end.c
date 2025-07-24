@@ -19,7 +19,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	{
 		end->prev = NULL; /*lista vacia no hay nodo aterior*/
 		*head = end;
-		return(end);
+		return (end);
 	}
 
 	temp = *head;
