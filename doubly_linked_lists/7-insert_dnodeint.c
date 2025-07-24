@@ -33,6 +33,9 @@ dlistint_t
 	new_n->n = n;
 	new_n->prev = temp;
 	new_n->next = temp->next;
+	/*le doy nuevo valor a los ptrs de los nodos adyacentes*/
+	temp->next->prev = new_n;
+	temp->prev->next = new_n;
 
 	return (new_n);
 }
