@@ -4,19 +4,18 @@
 #include <stdlib.h>
 
 ssize_t
-read_textfile(const char *file, size_t letters)
+read_textfile(const char *filename, size_t letters)
 {
 	char *str;
 	ssize_t readd, writee;
 	int fd;
 
-	if (file == NULL)
+	if (filename == NULL)
 		return (0);
-	
-	fd = open(file,O_RDONLY);
+
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
-		close(fd);
 		return (0);
 	}
 
@@ -25,13 +24,16 @@ read_textfile(const char *file, size_t letters)
 	{	close(fd);
 		return (0);
 	}
+
 	readd = read(fd, str, letters);
 	if (readd == -1)
 	{
 		free(str);
 		close(fd);
+		return (0);
 	}
-	writee = write(fd, str, letters);
+
+	writee = write(STDOUT_FILENO, str, letters);
 	if (writee == -1)
 	{
 		free(str);
