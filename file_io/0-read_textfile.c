@@ -33,8 +33,8 @@ read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	writee = write(STDOUT_FILENO, str, letters);
-	if (writee == -1)
+	writee = write(STDOUT_FILENO, str, readd);
+	if (writee == -1 || writee != readd)
 	{
 		free(str);
 		close(fd);
