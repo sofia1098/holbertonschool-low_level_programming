@@ -4,7 +4,7 @@
 #include <unistd.h>
 
 int
-_cp(const char *file_from,const char *file_to)
+_cp(const char *file_from, const char *file_to)
 {
 	int fd_f, fd_t, rd, wr;
 
@@ -19,7 +19,7 @@ _cp(const char *file_from,const char *file_to)
 	if (fd_f == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file\n");
-                return (98);
+		return (98);
 	}
 	fd_t = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_t == -1)
@@ -28,7 +28,7 @@ _cp(const char *file_from,const char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		return (99);
 	}
-	while ((rd = read(fd_f, buffer, 1024)) > 0)	
+	while ((rd = read(fd_f, buffer, 1024)) > 0)
 	{
 		wr = write(fd_t, buffer, rd);
 		if (wr == -1 || wr != rd)
@@ -56,13 +56,14 @@ _cp(const char *file_from,const char *file_to)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_t);
 		return (100);
-        }
+	}
 	close(fd_f);
 	close(fd_t);
-	return(0);
+	return (0);
 }
 
-int main(int argc, char *argv[])
+int
+main(int argc, char *argv[])
 {
 	if (argc != 3)
 	{
