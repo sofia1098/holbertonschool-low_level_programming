@@ -12,18 +12,21 @@ hash_table_t
 
 	/* Asignar memoria para la estructura de la tabla hash */
 	table = malloc(sizeof(hash_table_t));
+
 	if (table == NULL)
 		return (NULL);
 
 	table->size = size;
 	/* Asignar memoria para el array de punteros a nodos */
 	table->array = malloc(sizeof(hash_node_t *) * size);
+
 	if (table->array == NULL)
 	{
 		free(table);
 		return (NULL);
 	}
 	/* Inicia todos los elementos del array a NULL */
+
 	for (i = 0; i < size; i++)
 	{
 		table->array[i] = NULL;
