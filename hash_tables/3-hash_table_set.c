@@ -20,10 +20,24 @@ hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (actual->key == 0)
 		{
-			
+
 		}
 	}
+ /* Crear un nuevo nodo para la clave */
+	new = malloc(sizeof(ht));
+	if (new == NULL)
+	{
+		free(new);
+		return (0);
+	}
+	/*duplicar clave*/
+	new->key = strdup(key);
+	if (new->key == NULL)
+	{
+		free(new);
+		return (0);
+	}
 
-	
+	new->value = strdup ()
 
 }
