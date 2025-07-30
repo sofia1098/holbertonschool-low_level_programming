@@ -17,7 +17,7 @@ char
 	while (nodo) /*no es nulo*/
 	{
 		if (strcmp(nodo->key, key) == 0)
-		return (nodo->value);
+			return (nodo->value);
 		nodo = nodo->next;
 	}
 	return (NULL);
