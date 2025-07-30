@@ -3,17 +3,22 @@
 int
 hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	int i;
+	int idx;
+
+	char *copia;
 
 	hash_table_set *new, *actual;
 	
-	if (key == NULL || *key == '\0'|| ht == NULL)
+	if (key == NULL || *key == '\0'|| ht == NULL || value == NULL)
 		return (0);
 
-	/*calcular indice*/
-	i = key_index(key,ht->size);
+	copia = strup(value);/*copia con malloc un string*/
+	if(!copia)
+		return (0);
 
-	/*verifca que la clve ya existe*/
+	i = key_index((const unsigned char *)key,ht->size);/*casteo*/
+	------
+
 	actual = ht->array[i];
 
 	while (actual != NULL) /*recorre nodos hasta el final*/
