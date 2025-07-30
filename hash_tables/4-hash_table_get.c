@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-#include <stdlib.h> 
+#include <stdlib.h>
 #include <string.h>
 
 char
@@ -19,6 +19,6 @@ char
 		if (strcmp(nodo->key, key) == 0)
 		return (nodo->value);
 		nodo = nodo->next;
-    	}
+	}
 	return (NULL);
 }
