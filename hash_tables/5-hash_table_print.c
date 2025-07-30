@@ -17,7 +17,7 @@ hash_table_print(const hash_table_t *ht)
 	for (i = 0; i < ht->size; i++)
 	{
 		nodo = ht->array[i];
-		if (nodo != NULL)
+		while (nodo != NULL)
 		{
 			if (first == 0)
 				printf(", ");
@@ -26,7 +26,6 @@ hash_table_print(const hash_table_t *ht)
 			first = 0;
 			nodo = nodo->next;
 		}
-
 	}
 	printf("}\n");
 }
